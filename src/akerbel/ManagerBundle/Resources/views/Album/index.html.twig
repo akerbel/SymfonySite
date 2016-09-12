@@ -1,0 +1,18 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Album Manager</h1>
+    
+    <ul>
+        {% for album in albums %}
+            <li>
+                {{ album.id }}. {{ album.title }} - 
+                <a href="{{ path('album_show', {'id': album.id}) }}">View Album</a>
+            </li>
+        {% endfor %}
+    </ul>
+    
+    <p>
+        <a href="{{ path('album_new') }}">Create New Album</a>
+    </p>
+{% endblock %}

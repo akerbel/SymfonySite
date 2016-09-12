@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Album #{{ album.id }} - {{ album.title }}</h1>
+    
+    <h3>{{ album.description }}</h3>
+    
+    sort_order - {{ album.sort }}
+    
+    <ul>
+        <li><a href="{{ path('album') }}">Album Manager</a></li>
+        <li><a href="{{ path('album_edit', {'id': album.id}) }}">Album Editor</a></li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+
+{% endblock %}

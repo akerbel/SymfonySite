@@ -1,0 +1,30 @@
+album:
+    path: /album/
+    defaults: { _controller: "akerbelManagerBundle:Album:index" }
+    
+album_show:
+    path: /album/show/{id}
+    defaults: { _controller: "akerbelManagerBundle:Album:show" }
+    
+album_new:
+    path: /album/new
+    defaults: { _controller: "akerbelManagerBundle:Album:new" }
+    
+album_create:
+    path: /album/create
+    defaults: { _controller: "akerbelManagerBundle:Album:create" }
+    requirements: { _method: post }
+    
+album_edit:
+    path: /album/edit/{id}
+    defaults: { _controller: "akerbelManagerBundle:Album:edit" }
+    
+album_update:
+    path: /album/update/{id}
+    defaults: { _controller: "akerbelManagerBundle:Album:update" }
+    requirements: { _method: post|put }
+    
+album_delete:
+    path: /album/delete/{id}
+    defaults: { _controller: "akerbelManagerBundle:Album:delete" }
+    requirements: { _method: post|delete }

@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Edit album</h1>
+
+    {{ form(form) }}
+    
+    <ul>
+        <li><a href="{{ path('album') }}">Album Manager</a></li>
+    </ul>
+{% endblock %}
