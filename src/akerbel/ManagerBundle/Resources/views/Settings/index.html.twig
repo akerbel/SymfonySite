@@ -1,0 +1,11 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{{ parent() }} Settings{% endblock %}
+
+{% block sidebar %}
+    {{ include('@manager/sidebar.html.twig') }}
+{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Settings:index page</h1>
+{% endblock %}

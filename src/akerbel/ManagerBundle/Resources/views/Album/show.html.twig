@@ -1,7 +1,12 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}{{ parent() }}Album #{{ album.id }} - {{ album.title }}{% endblock %}
+
+{% block sidebar %}
+    {{ include('@manager/sidebar.html.twig') }}
+{% endblock %}
+
 {% block body -%}
-    <h1>Album #{{ album.id }} - {{ album.title }}</h1>
     
     <h3>{{ album.description }}</h3>
     

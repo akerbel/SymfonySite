@@ -1,7 +1,12 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}{{ parent() }} Edit album{% endblock %}
+
+{% block sidebar %}
+    {{ include('@manager/sidebar.html.twig') }}
+{% endblock %}
+
 {% block body -%}
-    <h1>Edit album</h1>
 
     {{ form(form) }}
     

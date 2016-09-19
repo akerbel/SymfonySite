@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ parent() }} Main admin page{% endblock %}
+
+{% block sidebar %}
+    {{ include('@manager/sidebar.html.twig') }}
+{% endblock %}
+
+{% block body -%}
+    <h1>Main page</h1>
+    akerbelManagerBundle::navbar.html.twig
+{% endblock %}

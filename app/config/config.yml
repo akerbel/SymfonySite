@@ -37,6 +37,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    paths:
+        "%kernel.root_dir%/../src/akerbel/ManagerBundle/Resources/views": manager
 
 # Doctrine Configuration
 doctrine:
@@ -67,3 +69,32 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+    assets:
+        bootstrap_js:
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/js/bootstrap.js
+
+        bootstrap_css:
+            inputs:
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap.css
+                - %kernel.root_dir%/../vendor/twbs/bootstrap/dist/css/bootstrap-theme.css
+            filters: [cssrewrite]
+        
+        user_css:
+            inputs:
+                - %kernel.root_dir%/../app/Resources/css/style.css
+            filters: [cssrewrite]
+        
+        jquery:
+            inputs:
+                - %kernel.root_dir%/../vendor/jquery/jquery/jquery-2.2.3.js
+                
+        main_js:
+            inputs:
+                - %kernel.root_dir%/../app/Resources/js/main.js

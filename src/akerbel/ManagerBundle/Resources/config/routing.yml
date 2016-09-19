@@ -1,3 +1,7 @@
+manager:
+    path: /
+    defaults: { _controller: "akerbelManagerBundle:Default:index" }
+
 album:
     path: /album/
     defaults: { _controller: "akerbelManagerBundle:Album:index" }
@@ -28,3 +32,11 @@ album_delete:
     path: /album/delete/{id}
     defaults: { _controller: "akerbelManagerBundle:Album:delete" }
     requirements: { _method: post|delete }
+    
+settings:
+    path: /settings/
+    defaults: { _controller: "akerbelManagerBundle:Settings:index" }
+    
+settings:
+    path: /settings/update
+    defaults: { _controller: "akerbelManagerBundle:Settings:update" }

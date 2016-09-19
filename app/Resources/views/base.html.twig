@@ -1,16 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        <title>{% block title %}AKerbel.RU {% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
+        {% stylesheets '@bootstrap_css' '@user_css' %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+        
     </head>
-    <body
-        {% for flashMessage in app.session.flashbag.get('msg') %}
-            <div>{{ flashMessage }}</div>
-        {% endfor%}
-        {% block body %}{% endblock %}
+    <body>
+        <header class="navbar">
+            <div class="container pageheader">
+                {#{% include 'header.html.twig' %}#}
+                <div class="h1">{{ block('title') }}</div>
+            </div>
+        </header>
+    {#
+    {{ dump(app) }}
+    {{ app.request.attributes.get("_controller") }}
+    #}
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-sm-2">
+                    {% block sidebar %}{% endblock %}
+                </div>
+                <div class="col-sm-10">
+                    {% for flashMessage in app.session.flashbag.get('msg') %}
+                        <div class="row">
+                            <div class="col-sm-12">{{ flashMessage }}</div>
+                        </div>
+                    {% endfor%}
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {% block body %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <footer class="navbar navbar-fixed-bottom">
+            <div class="container pageheader">
+                <h1>Тип футер</h1>
+                {# {% include 'footer.html.twig' %} #}
+            </div>
+        </footer>
+        
+        {% javascripts '@jquery' '@bootstrap_js' '@main_js' %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+        
         {% block javascripts %}{% endblock %}
+
     </body>
 </html>
