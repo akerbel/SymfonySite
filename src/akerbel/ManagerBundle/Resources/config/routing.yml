@@ -37,6 +37,6 @@ settings:
     path: /settings/
     defaults: { _controller: "akerbelManagerBundle:Settings:index" }
     
-settings:
+settings_update:
     path: /settings/update
     defaults: { _controller: "akerbelManagerBundle:Settings:update" }

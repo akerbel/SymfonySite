@@ -1,5 +1,11 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}{{ parent() }}New album{% endblock %}
+
+{% block sidebar %}
+    {{ knp_menu_render('akerbelManagerBundle:Builder:managerSidebarMenu') }}
+{% endblock %}
+
 {% block body -%}
     <h1>New page</h1>
 

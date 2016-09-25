@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} Settings{% endblock %}
 
 {% block sidebar %}
-    {{ include('@manager/sidebar.html.twig') }}
+    {{ knp_menu_render('akerbelManagerBundle:Builder:managerSidebarMenu') }}
 {% endblock %}
 
 {% block body %}

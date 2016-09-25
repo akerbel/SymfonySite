@@ -3,7 +3,8 @@
 {% block title %}{{ parent() }} Main admin page{% endblock %}
 
 {% block sidebar %}
-    {{ include('@manager/sidebar.html.twig') }}
+    {#{{ include('@manager/sidebar.html.twig') }}#}
+    {{ knp_menu_render('akerbelManagerBundle:Builder:managerSidebarMenu') }}
 {% endblock %}
 
 {% block body -%}
